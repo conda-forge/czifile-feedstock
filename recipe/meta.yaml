@@ -1,6 +1,6 @@
 {% set name = "czifile" %}
-{% set version = "2019.7.2" %}
-{% set sha256 = "04c0e6bed3b24d1bf42bc2cf899a5a08986641379305ce88600fd1c710486436" %}
+{% set version = "2019.7.2.1" %}
+{% set sha256 = "6169aa681dd8af0d25e8e731e83393140cb960097d2a641dd145e8349bd2e965" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
