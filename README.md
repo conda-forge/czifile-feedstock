@@ -9,11 +9,13 @@ Package license: BSD-3-Clause
 
 Summary: Read Carl Zeiss(r) Image (CZI) files
 
-Development: https://www.lfd.uci.edu/~gohlke/
+Development: https://github.com/cgohlke/czifile/
 
 Documentation: https://www.lfd.uci.edu/~gohlke/
 
-Czifile is a Python library to read Carl Zeiss Image (CZI) files, the native file format of the ZEN(r) software by Carl Zeiss Microscopy GmbH. CZI files contain multidimensional images and metadata from microscopy experiments.
+Czifile is a Python library to read Carl Zeiss Image (CZI) files,
+the native file format of the ZEN(r) software by Carl Zeiss Microscopy GmbH.
+CZI files contain multidimensional images and metadata from microscopy experiments.
 
 
 Current build status
