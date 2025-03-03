@@ -23,7 +23,7 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptoools
+    - setuptools
   run:
     - python >={{ python_min }}
     - numpy >=1.11.3
