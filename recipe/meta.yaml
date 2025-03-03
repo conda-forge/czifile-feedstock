@@ -1,6 +1,6 @@
 {% set name = "czifile" %}
-{% set version = "2019.7.2" %}
-{% set sha256 = "04c0e6bed3b24d1bf42bc2cf899a5a08986641379305ce88600fd1c710486436" %}
+{% set version = "2019.7.2.1" %}
+{% set sha256 = "6169aa681dd8af0d25e8e731e83393140cb960097d2a641dd145e8349bd2e965" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -21,10 +21,11 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - numpy >=1.11.3
     - tifffile >=2019.7.2
     - imagecodecs-lite >=2019.12.2
@@ -35,6 +36,8 @@ test:
   commands:
     - czifile ""
     - czi2tif
+  requires:
+    - python {{ python_min }}
 
 about:
   home: https://www.lfd.uci.edu/~gohlke/
@@ -43,9 +46,11 @@ about:
   license_file: LICENSE
   summary: 'Read Carl Zeiss(r) Image (CZI) files'
   description: |
-    Czifile is a Python library to read Carl Zeiss Image (CZI) files, the native file format of the ZEN(r) software by Carl Zeiss Microscopy GmbH. CZI files contain multidimensional images and metadata from microscopy experiments.
+    Czifile is a Python library to read Carl Zeiss Image (CZI) files,
+    the native file format of the ZEN(r) software by Carl Zeiss Microscopy GmbH.
+    CZI files contain multidimensional images and metadata from microscopy experiments.
   doc_url: https://www.lfd.uci.edu/~gohlke/
-  dev_url: https://www.lfd.uci.edu/~gohlke/
+  dev_url: https://github.com/cgohlke/czifile/
 
 extra:
   recipe-maintainers:
