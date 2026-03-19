@@ -3,19 +3,17 @@ About czifile-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/czifile-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.lfd.uci.edu/~gohlke/
+Home: https://www.cgohlke.com/
 
 Package license: BSD-3-Clause
 
-Summary: Read Carl Zeiss(r) Image (CZI) files
+Summary: Read Carl Zeiss image files (CZI)
 
 Development: https://github.com/cgohlke/czifile/
 
-Documentation: https://www.lfd.uci.edu/~gohlke/
-
-Czifile is a Python library to read Carl Zeiss Image (CZI) files,
-the native file format of the ZEN(r) software by Carl Zeiss Microscopy GmbH.
-CZI files contain multidimensional images and metadata from microscopy experiments.
+Czifile is a Python library for reading image data and metadata from
+Carl Zeiss Image (CZI) files, the native file format of ZEN by
+Carl Zeiss Microscopy GmbH.
 
 
 Current build status
@@ -152,5 +150,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@cgohlke](https://github.com/cgohlke/)
 * [@csachs](https://github.com/csachs/)
 

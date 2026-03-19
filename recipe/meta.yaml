@@ -1,23 +1,22 @@
 {% set name = "czifile" %}
-{% set version = "2019.7.2.2" %}
-{% set sha256 = "14e375e4e89ec6062b24af91cd1aa5f4793333d93422b3a017eb3f94fa17a835" %}
+{% set version = "2026.3.17" %}
+{% set python_min = "3.12" %}
+{% set sha256 = "03224566ece5db3aed28a064814c1dd83a575042e282e4dff4d3287d41374259" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   noarch: python
   entry_points:
     - czifile = czifile.czifile:main
-    - czi2tif = czifile.czi2tif:main
 
 requirements:
   host:
@@ -26,32 +25,35 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - numpy >=1.11.3
-    - tifffile >=2019.7.2
-    - imagecodecs-lite >=2019.12.2
+    - numpy >=2.0.0
+    - imagecodecs >=2026.3.6
+    - tifffile >=2024.8.30
+    - xarray >=2024.4.0
+    - matplotlib-base >=3.7.0
 
 test:
   imports:
     - czifile
   commands:
-    - czifile ""
-    - czi2tif
+    - pip check
+    - czifile --help
   requires:
+    - pip
     - python {{ python_min }}
 
 about:
-  home: https://www.lfd.uci.edu/~gohlke/
+  home: https://www.cgohlke.com/
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Read Carl Zeiss(r) Image (CZI) files'
+  summary: Read Carl Zeiss image files (CZI)
   description: |
-    Czifile is a Python library to read Carl Zeiss Image (CZI) files,
-    the native file format of the ZEN(r) software by Carl Zeiss Microscopy GmbH.
-    CZI files contain multidimensional images and metadata from microscopy experiments.
-  doc_url: https://www.lfd.uci.edu/~gohlke/
+    Czifile is a Python library for reading image data and metadata from
+    Carl Zeiss Image (CZI) files, the native file format of ZEN by
+    Carl Zeiss Microscopy GmbH.
   dev_url: https://github.com/cgohlke/czifile/
 
 extra:
   recipe-maintainers:
+    - cgohlke
     - csachs
