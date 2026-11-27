@@ -1,7 +1,7 @@
 {% set name = "czifile" %}
-{% set version = "2026.11.12" %}
+{% set version = "2026.11.26" %}
 {% set python_min = "3.12" %}
-{% set sha256 = "2dbf216336624c762d7d5f8debed9a1d8022865fc112f52d03609c586f7f0493" %}
+{% set sha256 = "17cefaba43f8a4a1cc416d823fedb7ea7e6a2d6085c1ae2b74bd09f794dfaad3" %}
 
 package:
   name: {{ name|lower }}
